@@ -1,0 +1,30 @@
+1. authentification.py
+on line 1 and 2 there are imports 
+    * seiral for serial commuication
+    * struct for conveting data to buffers
+    * datetime for time control
+    * time for timestamp control
+    * sys for communication with the system
+
+ser = serial.Serial("COM6", 9600, timeout=1) : 
+    declaration of a type ser wich is gonna help us to make serial communication
+    com6 is the serialport name
+    9600 is the braudRate
+    timeout is the max time of an empty communication
+
+def readPacket(): # new function for reading packets 
+    time.sleep(1) #temporisation 
+    w = ser.in_waiting() # serching for incoming data from the serial object
+    ret = [] #container of incoming data
+    if w >= 9: # the data  comes on 8 packet bytes
+        s = ser.read(9) #partial read to get length read the first packet
+        ret.extend(struct.unpack('!HIBH', s)) # storage on ret
+        ln = ret[-1] # takes the length of ret
+
+        time.sleep(1) #  temporisation
+        w = ser.in_waiting() #waiting for serial data
+        if w >= ln: # read the rest part of data
+            s = ser.read(ln) # storage of data
+            form = '!' + 'B' * (ln - 2) + 'H' 
+            ret.extend(struct.unpack(form, s))
+    return ret

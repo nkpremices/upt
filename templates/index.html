@@ -1,0 +1,180 @@
+{% load static %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}home{% endblock %}</title>
+
+    {% block add_head %}
+        <meta charset="utf-8">
+        <title>Eglise Homonerie de l'ULPGL</title>
+        <meta name="description" content="Worthy a Bootstrap-based, Responsive HTML5 Template">
+        <meta name="author" content="htmlcoder.me">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href=" {% static 'images/favicon.ico' %}">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext'
+              rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
+        <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+        <link href=" {% static 'fonts/font-awesome/css/font-awesome.css' %}" rel="stylesheet">
+        <link href=" {% static 'css/animations.css' %}" rel="stylesheet">
+        <link href=" {% static 'css/style.css' %}" rel="stylesheet">
+        <link href=" {% static 'css/custom.css' %}" rel="stylesheet">
+
+    {% endblock %}
+</head>
+
+<body class="no-trans">
+
+<!-- scrollToTop -->
+<!-- ================ -->
+<div class="scrollToTop"><i class="icon-up-open-big"></i></div>
+
+<!-- header start -->
+<!-- ================ -->
+<!-- header start -->
+<!-- ================ -->
+<header class="header fixed clearfix navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+
+                <!-- header-left start -->
+                <!-- ================ -->
+                <div class="header-left clearfix">
+
+                    <!-- logo -->
+                    <div class="logo smooth-scroll">
+                        <a href="#banner"><img id="logo" src=" {% static 'images/ulpgl.png' %}" width="40" alt="Worthy"></a>
+                    </div>
+
+                    <!-- name-and-slogan -->
+                    <div class="site-name-and-slogan smooth-scroll">
+                        <div class="site-name"><a href="#banner"> ULPGL</a></div>
+                        <div class="site-slogan">{% block label_high %}
+                            <a target="_blank" href="http://ulpgl.net">université</a> de l'excellence{% endblock %}
+                        </div>
+                    </div>
+
+                </div>
+                <!-- header-left end -->
+
+            </div>
+            <div class="col-md-7  col-md-pull-0">
+                <div class="row">
+                    <div class="header-right clearfix col-md-pull-0 col-md-11">
+
+                        <div class="main-navigation animated">
+                            <nav class="navbar navbar-default" role="navigation">
+                                <div class="container-fluid">
+
+                                    <!-- Toggle get grouped for better mobile display -->
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                                data-target="#navbar-collapse-1">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                    </div>
+                                    <div class="collapse navbar-collapse scrollspy smooth-scroll"
+                                         id="navbar-collapse-1">
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li {% block home_active %}class="active"{% endblock %}><a href="{% url 'index' %}">ACCUEIL</a></li>
+                                            <li {% block cours_active %} {% endblock %}><a href="{% url 'cours' %}">COURS</a></li>
+                                            <li {% block agent_active %} {% endblock %}><a href="#agent">AGENT</a></li>
+                                            <li {% block examen_active %} {% endblock %}><a href="#examen">EXAMEN</a></li>
+                                            <li {% block about_active %} {% endblock %}><a href="#about">ABOUT</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>
+<!-- header end -->
+
+
+<!-- banner start -->
+<!-- ================ -->
+<div id="banner" class="banner">
+    <div class="banner-image"></div>
+    <div class="banner-caption container">
+        <div class="">
+            <div class="row">
+
+                <div class="col-md-offset-3 col-md-9 object-non-visible" data-animation-effect="fadeIn">
+                    {% block label_low %}
+                        <div class="row text-center ">
+
+                            <div class="col-md-offset-3 col-md-6">
+                                <h1 class="">UPT</h1>
+                                <p class="lead">University Presence Tool</p>
+                            </div>
+                        </div>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    <div class=""></div>
+        <div class="space"></div>
+        <div class="space"></div>
+
+
+    </div>
+</div>
+<!-- banner end -->
+
+
+{% block body %}
+
+{% endblock %}
+
+
+
+<div class="container-fluid">
+    <div class="row default-bg space">
+        <div class="col-md-12">
+            <p class="text-center"> implemented and designed by <a target="_blank"
+                                                                   href="http://htmlcoder.me">Prémices</a>.</p>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript files placed at the end of the document so the pages load faster
+        ================================================== -->
+<!-- Jquery and Bootstap core js files -->
+<script type="text/javascript" src="{% static 'plugins/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+<!-- Modernizr javascript -->
+<script type="text/javascript" src="{% static 'plugins/modernizr.js' %}"></script>
+
+<!-- Isotope javascript -->
+<script type="text/javascript" src="{% static 'plugins/isotope/isotope.pkgd.min.js' %}"></script>
+
+<!-- Backstretch javascript -->
+<script type="text/javascript" src="{% static 'plugins/jquery.backstretch.min.js' %}"></script>
+
+<!-- Appear javascript -->
+<script type="text/javascript" src=" {% static 'plugins/jquery.appear.js' %}"></script>
+
+<!-- Initialization of Plugins -->
+<script type="text/javascript" src="{% static 'js/template.js' %}"></script>
+
+<!-- Custom Scripts -->
+<script type="text/javascript" src=" {% static 'js/custom.js' %}"></script>
+
+</body>
+</html>

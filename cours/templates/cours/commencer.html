@@ -1,0 +1,89 @@
+{% extends 'index.html' %}
+{% block title %}cours/commencer{% endblock %}
+{% load bootstrap4 %}
+{% block label_high %}
+
+    presence tool / <span> cours </span>
+
+{% endblock %}
+{% block label_low %}
+    <div class="">
+        <p><h4 class="col-md-offset-3">Bievenue user</h4></p>
+        <div class="space"></div>
+        <div class="space"></div>
+        <p><h4 class=""> Descendez plus bas pour entrer les caracteristiques du cours <span
+            class="site-slogan">(faculté, promotion,..)</span></h4></p>
+    </div>
+
+{% endblock %}
+
+
+{% block body %}
+    <div class="space"></div>
+
+    <div class="row">
+
+        <div class="col-md-offset-5 col-md-3">
+            <div class="">
+                <form>
+                    <div class="form-group">
+                        <label for="faculty">Faculté</label>
+                        <select class="form-control" id="faculty">
+                            <option>FSTA</option>
+                            <option>FSEG</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="prom">Promotion</label>
+                        <select class="form-control" id="prom">
+                            {% if faculty == "FSTA" %}
+                                <option>G0</option>
+                            {% endif %}
+                            <option>G1</option>
+                            <option>G2</option>
+                            <option>G3</option>
+                            {% if faculty == "FSTA" %}
+                                <option>Tech1</option>
+                                <option>Tech2</option>
+                            {% endif %}
+                            {% if  faculty != "FSTA" %}
+                                <option>L1</option>
+                                <option>L2</option>
+                            {% endif %}
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="IntituleCours">Intitulé du cours</label>
+                        <input type="text" class="form-control" id="IntituleCours"
+                               placeholder="ex : Machines élécriques">
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <label for="volumeHoraire">Volume horaire</label>
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="volumeHoraire"
+                                   placeholder="ex : 45">
+                        </div>
+                        <div class="col-md-6"> Heures</div>
+
+                    </div>
+                    <div class="form-group row">
+                        <button type="submit" class="btn btn-primary">Valider</button>
+                        <a href="{% url 'cours' %}" class="btn btn-primary">Retourner</a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="space"></div>
+    <div class="space"></div>
+
+
+{% endblock %}

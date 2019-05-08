@@ -1,0 +1,114 @@
+{% extends 'index.html' %}
+{% block title %}cours/commencer{% endblock %}
+{% load bootstrap4 %}
+{% block label_high %}
+
+    presence tool / <span> cours </span>
+
+{% endblock %}
+{% block label_low %}
+    <div class="">
+        <p><h4 class="col-md-offset-3">Bievenue user</h4></p>
+        <div class="space"></div>
+        <div class="space"></div>
+        <p><h4 class=""> Descendez plus bas pour entrer les caracteristiques du cours <span
+            class="site-slogan">(faculté, promotion,..)</span></h4></p>
+    </div>
+
+{% endblock %}
+
+
+{% block body %}
+    <div class="space"></div>
+
+    <div class="row">
+
+        <div class="col-md-offset-3 col-md-6">
+
+                <div class="center-block"><h4>COURS DE BASE DE DONNEES par Henri SHABANI</h4></div>
+
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">noms</th>
+                        <th scope="col">faculté/option</th>
+                        <th scope="col">Promotion</th>
+                        <th scope="col">Nombre de presences</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Nzanzu KAMASUWA PREMICES</td>
+                        <td>FSTA/GEI</td>
+                        <td>G3</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>ZIRIMWABAGBO MUSINGO KARL</td>
+                        <td>FSTA/GEI</td>
+                        <td>G3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+
+                </table>
+            <button type="button" class="btn btn-primary">Imprimer</button>
+
+              <div class="center-block"><h4>COURS D'INFORMATIQUE DE GESTION par TAKENGA Claude</h4></div>
+
+                <table class="table">
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">noms</th>
+                        <th scope="col">faculté/option</th>
+                        <th scope="col">Promotion</th>
+                        <th scope="col">Nombre de presences</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>KAVUGHO HEMBERWA LOUISE</td>
+                        <td>FSTA/GC</td>
+                        <td>G3</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Gabriel KASHALA DJIBRIL</td>
+                        <td>FSTA/GC</td>
+                        <td>G3</td>
+                        <td>17</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            <button type="button" class="btn btn-primary">Imprimer</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="space"></div>
+    <div class="space"></div>
+
+{% endblock %}

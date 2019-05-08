@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% block title %}cours{% endblock %}
+{% block label_high %}presence tool / <span> cours </span>{% endblock %}
+{% block home_active %} class = ""{% endblock %}
+{% block cours_active %} class="active"{% endblock %}
+{% block label_low %}
+
+<div class="row col-md-offset-2">
+    <div>
+        <a href=" {% url 'login_page' %}" class="btn btn-primary  btn-lg" role="button">commencer un cours</a>
+        <a href="{% url 'finger_page'%}" class="btn btn-primary btn-lg">marquer la presence</a>
+        <a href="#" class="btn btn-primary btn-lg ">finir un cours</a>
+    </div>
+
+    <div class="space"></div>
+    <div class="space"></div>
+    <div class="space"></div>
+    <div class="space"></div>
+    <div class="space"></div>
+    <div class="space"></div>
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <a href="#" class="btn btn-primary btn-lg active">Retourner</a>
+    </div>
+</div>
+{% endblock %}

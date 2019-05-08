@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% load bootstrap4 %}
+{% block title %}authentification{% endblock %}
+{% block label_high %}
+
+    presence tool / <span> authentification </span>
+
+{% endblock %}
+{% block label_low %}
+
+    <div class="row">
+
+        {% if form.errors %}
+            <div class="col-md-offset-2 col-md-7"><h3>veuillez respecter les consignes de chaque champ</h3></div>
+        {% endif %}
+
+    {% if next %}
+        <div class="col-md-offset-2 col-md-7"><h3>page inaccessible</h3></div>
+    {% endif %}
+    {% if valide %}Votre message a bien été envoyé !{% endif %}
+
+        <div class="col-md-offset-2 col-md-7"><h3>veuillez d'abord vous {% if form.errors %}re{% endif %}connecter</h3>
+        </div>
+
+        <form action="{% url 'finger_page' %}" method="POST" class="form col-md-5 col-md-offset-2">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    {% endbuttons %}
+
+</form>
+    {{ form.errors }}
+        <div class="space"></div>
+    </div>
+{% endblock %}
